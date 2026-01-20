@@ -1,9 +1,4 @@
-![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Random%20Forest-green)
-![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
-![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
-![Deployment](https://img.shields.io/badge/Deployment-Streamlit%20Cloud-brightgreen)
-![Status](https://img.shields.io/badge/Status-Live-success)
+
 [![Live App](https://img.shields.io/badge/Live%20App-Streamlit-red)](https://vehicle-acceptability-prediction-v32ohfjxhltgctilumjnnw.streamlit.app)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black)](https://github.com/Akshathippargi/vehicle-acceptability-prediction)
 
