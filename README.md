@@ -70,3 +70,28 @@ This project solves the problem using a **Random Forest classification model**.
 ---
 
 ## 📁 Project Structure
+vehicle-acceptability-prediction/
+├── app/
+│ └── app.py # Streamlit application
+│
+├── src/
+│ ├── data_preprocessing.py # Data loading & preprocessing
+│ ├── feature_engineering.py # Feature encoding & transformations
+│ ├── train_model.py # Model training script
+│ └── evaluate_model.py # Model evaluation & metrics
+│
+├── models/
+│ └── random_forest_model.pkl # Trained ML model
+│
+├── data/
+│ └── raw/
+│ ├── car.data
+│ ├── car.names
+│ └── car.c45-names
+│
+├── notebooks/ # Jupyter notebooks (optional)
+├── reports/ # Evaluation reports & visuals
+│
+├── requirements.txt # Project dependencies
+├── .gitignore # Git ignore rules
+└── README.md # Project documentation
