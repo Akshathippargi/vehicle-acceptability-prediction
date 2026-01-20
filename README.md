@@ -102,3 +102,13 @@ vehicle-acceptability-prediction/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
+## 🚀 Run Locally
+
+Follow the steps below to run the application on your local machine:
+
+```bash
+git clone https://github.com/Akshathippargi/vehicle-acceptability-prediction.git
+cd vehicle-acceptability-prediction
+pip install -r requirements.txt
+python -m streamlit run app/app.py
