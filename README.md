@@ -1,3 +1,10 @@
+![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Random%20Forest-green)
+![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
+![Deployment](https://img.shields.io/badge/Deployment-Streamlit%20Cloud-brightgreen)
+![Status](https://img.shields.io/badge/Status-Live-success)
+
 # 🚗 Vehicle Acceptability Prediction
 
 🔗 **Live Demo:**  
