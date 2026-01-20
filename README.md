@@ -1,29 +1,39 @@
-
-[![Live App](https://img.shields.io/badge/Live%20App-Streamlit-red)](https://vehicle-acceptability-prediction-v32ohfjxhltgctilumjnnw.streamlit.app)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black)](https://github.com/Akshathippargi/vehicle-acceptability-prediction)
+![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Random%20Forest-green)
+![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
+![Deployment](https://img.shields.io/badge/Deployment-Streamlit%20Cloud-brightgreen)
+![Status](https://img.shields.io/badge/Status-Live-success)
 
 # 🚗 Vehicle Acceptability Prediction
 
-🔗 **Live Demo:**  
+🔗 **Live Application:**  
 https://vehicle-acceptability-prediction-v32ohfjxhltgctilumjnnw.streamlit.app
 
 ---
 
-## 📌 Overview
-This project is an end-to-end **Machine Learning application** that predicts **vehicle acceptability** (`unacc`, `acc`, `good`, `vgood`) based on pricing, safety, passenger capacity, and utility features.  
-The complete ML lifecycle — data preprocessing, model training, evaluation, and deployment — is implemented and deployed on **Streamlit Cloud**.
+## 📌 Project Summary
+This project is an **end-to-end Machine Learning application** that predicts **vehicle acceptability** (`unacc`, `acc`, `good`, `vgood`) based on pricing, safety, passenger capacity, and utility-related features.
+
+The project demonstrates the **complete ML lifecycle**, including:
+- Data preprocessing
+- Feature engineering
+- Model training & evaluation
+- Interactive dashboard development
+- Cloud deployment
 
 ---
 
-## 🎯 Problem Statement
-Vehicle manufacturers and dealers need a reliable way to assess whether a vehicle configuration will be acceptable to customers based on multiple categorical factors.  
-This project solves the problem using a **Random Forest classification model**.
+## 🎯 Business Problem
+Vehicle manufacturers, dealerships, and product teams need a reliable way to evaluate whether a vehicle configuration will be **accepted by customers** based on multiple categorical attributes.
+
+This project solves the problem using a **supervised classification approach**.
 
 ---
 
 ## 📂 Dataset
 - **Source:** UCI Machine Learning Repository – Car Evaluation Dataset
-- **Total Records:** 1,728
+- **Records:** 1,728
 - **Features:**
   - Buying Price
   - Maintenance Cost
@@ -35,71 +45,65 @@ This project solves the problem using a **Random Forest classification model**.
 
 ---
 
-## 🧠 Machine Learning Approach
-- One-hot encoding for categorical features
+## 🧠 Machine Learning Methodology
+- Categorical feature encoding using **One-Hot Encoding**
 - Stratified train-test split
-- **Random Forest Classifier**
-- Evaluation using accuracy, precision, recall, and F1-score
+- **Random Forest Classifier** for non-linear feature interactions
+- Performance evaluation using:
+  - Accuracy
+  - Precision
+  - Recall
+  - F1-score
 
 **Final Model Accuracy:** ~**89%**
 
 ---
 
 ## 📊 Key Insights
-- Safety is the strongest determinant of vehicle acceptability
-- High safety can compensate for higher price
-- Minority classes (`good`, `vgood`) have lower recall due to class imbalance
-- Probability-based predictions improve interpretability
+- Safety is the strongest driver of vehicle acceptability
+- High safety can offset higher buying price
+- Minority classes (`good`, `vgood`) show lower recall due to class imbalance
+- Probability-based predictions improve model interpretability and decision-making
 
 ---
 
-## 🖥️ Streamlit Application Features
-- Interactive user interface
-- Real-time acceptability prediction
+## 🖥️ Application Features
+- Interactive feature selection UI
+- Real-time predictions
 - Class probability bar chart
 - Model confidence scores
 - Automatically generated business insights
+- Cloud-hosted Streamlit application
 
 ---
 
 ## 🛠️ Tech Stack
-- Python
-- Pandas, NumPy
-- Scikit-learn
-- Matplotlib
-- Streamlit
-- Git & GitHub
-- Streamlit Cloud
+- **Programming:** Python
+- **Data Analysis:** Pandas, NumPy
+- **Machine Learning:** Scikit-learn
+- **Visualization:** Matplotlib
+- **Web App:** Streamlit
+- **Version Control:** Git & GitHub
+- **Deployment:** Streamlit Cloud
 
 ---
 
 ## 📁 Project Structure
-
 ```text
 vehicle-acceptability-prediction/
 ├── app/
-│   └── app.py                  # Streamlit application
-│
+│   └── app.py
 ├── src/
-│   ├── data_preprocessing.py   # Data loading & preprocessing
-│   ├── feature_engineering.py  # Feature encoding & transformations
-│   ├── train_model.py          # Model training script
-│   └── evaluate_model.py       # Model evaluation & metrics
-│
+│   ├── data_preprocessing.py
+│   ├── feature_engineering.py
+│   ├── train_model.py
+│   └── evaluate_model.py
 ├── models/
-│   └── random_forest_model.pkl # Trained ML model
-│
+│   └── random_forest_model.pkl
 ├── data/
 │   └── raw/
-│       ├── car.data
-│       ├── car.names
-│       └── car.c45-names
-│
-├── notebooks/                  # Jupyter notebooks (optional)
-├── reports/                    # Evaluation reports & visuals
-│
-├── requirements.txt            # Project dependencies
-├── .gitignore                  # Git ignore rules
-└── README.md                   # Project documentation
-```
-
+├── notebooks/
+├── reports/
+├── requirements.txt
+├── .gitignore
+└── README.md
