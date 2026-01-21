@@ -30,14 +30,74 @@ st.subheader("Enter Vehicle Details")
 col1, col2 = st.columns(2)
 
 with col1:
-    buying = st.selectbox("Buying Price", ["low", "med", "high", "vhigh"])
-    doors = st.selectbox("Number of Doors", ["2", "3", "4", "5more"])
-    lug_boot = st.selectbox("Luggage Boot Size", ["small", "med", "big"])
+    buying_price_inr = st.number_input(
+        "Expected Vehicle Price (INR)",
+        min_value=100000,
+        max_value=10000000,
+        step=50000,
+        value=500000,
+        help="Approximate on-road price"
+    )
+
+    if buying_price_inr < 400000:
+        buying = "low"
+    elif buying_price_inr < 800000:
+        buying = "med"
+    elif buying_price_inr < 1500000:
+        buying = "high"
+    else:
+        buying = "vhigh"
+
+    doors = st.selectbox(
+        "Number of Doors",
+        ["2", "3", "4", "5more"]
+    )
+
+    lug_boot = st.selectbox(
+        "Luggage Boot Size",
+        ["small", "med", "big"]
+    )
+
 
 with col2:
-    maint = st.selectbox("Maintenance Cost", ["low", "med", "high", "vhigh"])
-    persons = st.selectbox("Passenger Capacity", ["2", "4", "more"])
-    safety = st.selectbox("Safety Level", ["low", "med", "high"])
+    maintenance_cost_inr = st.number_input(
+        "Estimated Annual Maintenance Cost (INR)",
+        min_value=5000,
+        max_value=300000,
+        step=5000,
+        value=20000,
+        help="Approximate yearly maintenance cost"
+    )
+
+    if maintenance_cost_inr < 15000:
+        maint = "low"
+    elif maintenance_cost_inr < 40000:
+        maint = "med"
+    elif maintenance_cost_inr < 80000:
+        maint = "high"
+    else:
+        maint = "vhigh"
+
+    persons = st.selectbox(
+        "Passenger Capacity",
+        ["2", "4", "more"]
+    )
+
+    safety_rating = st.slider(
+        "Safety Rating (1–5)",
+        min_value=1,
+        max_value=5,
+        value=3,
+        help="Higher rating indicates better safety"
+    )
+
+    if safety_rating <= 2:
+        safety = "low"
+    elif safety_rating == 3:
+        safety = "med"
+    else:
+        safety = "high"
+
 
 # -------------------- DATA PREP --------------------
 input_df = pd.DataFrame([{
@@ -63,6 +123,32 @@ if st.button(" Predict Acceptability", use_container_width=True):
     prediction = model.predict(input_encoded)[0]
     probabilities = model.predict_proba(input_encoded)[0]
     classes = model.classes_
+st.divider()
+st.subheader("Pricing Insight")
+
+if buying_price_inr < 400000:
+    st.write(
+        "This vehicle is positioned in the **budget segment**, making it attractive for cost-sensitive buyers. "
+        "Competitive pricing can significantly improve acceptability, even with basic features."
+    )
+
+elif buying_price_inr < 800000:
+    st.write(
+        "This vehicle falls in the **mid-range segment**. Buyers typically expect a balance between price, safety, "
+        "and comfort features. Strong safety ratings can positively influence acceptance."
+    )
+
+elif buying_price_inr < 1500000:
+    st.write(
+        "This vehicle is priced in the **upper mid-range segment**. Customers in this segment are more selective and "
+        "expect higher safety standards and better overall utility."
+    )
+
+else:
+    st.write(
+        "This vehicle is positioned in the **premium segment**. High pricing may limit mass-market adoption unless "
+        "supported by excellent safety ratings, premium features, and strong brand value."
+    )
 
     # -------------------- MAIN RESULT --------------------
     st.subheader(" Prediction Result")
