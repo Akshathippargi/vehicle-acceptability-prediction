@@ -2,7 +2,7 @@
 
 # Vehicle Acceptability Prediction
 
-🔗 **Live Application:**  
+**Live Application:**  
 https://vehicle-acceptability-prediction-v32ohfjxhltgctilumjnnw.streamlit.app
 
 ---
