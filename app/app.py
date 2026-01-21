@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 # -------------------- PAGE CONFIG --------------------
 st.set_page_config(
     page_title="Vehicle Acceptability Predictor",
-    page_icon="🚗",
     layout="centered"
 )
 
@@ -14,7 +13,7 @@ st.set_page_config(
 model = joblib.load("models/random_forest_model.pkl")
 
 # -------------------- HEADER --------------------
-st.title("🚗 Vehicle Acceptability Prediction")
+st.title(" Vehicle Acceptability Prediction")
 st.markdown(
     """
     This application predicts **vehicle acceptability** based on  
@@ -59,23 +58,23 @@ input_encoded = input_encoded.reindex(
 # -------------------- PREDICTION --------------------
 st.divider()
 
-if st.button("🔮 Predict Acceptability", use_container_width=True):
+if st.button(" Predict Acceptability", use_container_width=True):
 
     prediction = model.predict(input_encoded)[0]
     probabilities = model.predict_proba(input_encoded)[0]
     classes = model.classes_
 
     # -------------------- MAIN RESULT --------------------
-    st.subheader("📊 Prediction Result")
+    st.subheader(" Prediction Result")
 
     if prediction == "unacc":
-        st.error("❌ **Unacceptable Vehicle**")
+        st.error(" **Unacceptable Vehicle**")
     elif prediction == "acc":
-        st.warning("⚠️ **Acceptable Vehicle**")
+        st.warning(" **Acceptable Vehicle**")
     elif prediction == "good":
-        st.success("✅ **Good Vehicle**")
+        st.success(" **Good Vehicle**")
     else:
-        st.success("🌟 **Very Good Vehicle**")
+        st.success(" **Very Good Vehicle**")
 
     # -------------------- PROBABILITY TABLE --------------------
     prob_df = pd.DataFrame({
@@ -90,7 +89,7 @@ if st.button("🔮 Predict Acceptability", use_container_width=True):
     )
 
     # -------------------- BAR CHART --------------------
-    st.subheader("📊 Probability Distribution")
+    st.subheader("Probability Distribution")
 
     fig, ax = plt.subplots()
     ax.bar(prob_df["Acceptability"], prob_df["Probability"])
@@ -101,7 +100,7 @@ if st.button("🔮 Predict Acceptability", use_container_width=True):
     st.pyplot(fig)
 
     # -------------------- BUSINESS INSIGHTS --------------------
-    st.subheader("💡 Business Insights")
+    st.subheader("Business Insights")
 
     insights = []
 
@@ -130,7 +129,7 @@ if st.button("🔮 Predict Acceptability", use_container_width=True):
     # -------------------- CONFIDENCE SUMMARY --------------------
     top_class = prob_df.iloc[0]
     st.info(
-        f"🔍 The model is **{top_class['Probability']:.1%} confident** "
+        f"The model is **{top_class['Probability']:.1%} confident** "
         f"that the vehicle falls under **'{top_class['Acceptability']}'** category."
     )
 
