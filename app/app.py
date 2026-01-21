@@ -25,7 +25,7 @@ st.markdown(
 st.divider()
 
 # -------------------- INPUT SECTION --------------------
-st.subheader("🔧 Enter Vehicle Details")
+st.subheader("Enter Vehicle Details")
 
 col1, col2 = st.columns(2)
 
@@ -82,7 +82,7 @@ if st.button(" Predict Acceptability", use_container_width=True):
         "Probability": probabilities
     }).sort_values(by="Probability", ascending=False)
 
-    st.subheader("📈 Prediction Confidence")
+    st.subheader("Prediction Confidence")
     st.dataframe(
         prob_df.style.format({"Probability": "{:.2%}"}),
         use_container_width=True
