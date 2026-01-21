@@ -1,13 +1,13 @@
 
 
-# 🚗 Vehicle Acceptability Prediction
+# Vehicle Acceptability Prediction
 
 🔗 **Live Application:**  
 https://vehicle-acceptability-prediction-v32ohfjxhltgctilumjnnw.streamlit.app
 
 ---
 
-## 📌 Project Summary
+## Project Summary
 This project is an **end-to-end Machine Learning application** that predicts **vehicle acceptability** (`unacc`, `acc`, `good`, `vgood`) based on pricing, safety, passenger capacity, and utility-related features.
 
 The project demonstrates the **complete ML lifecycle**, including:
@@ -19,14 +19,14 @@ The project demonstrates the **complete ML lifecycle**, including:
 
 ---
 
-## 🎯 Business Problem
+##  Business Problem
 Vehicle manufacturers, dealerships, and product teams need a reliable way to evaluate whether a vehicle configuration will be **accepted by customers** based on multiple categorical attributes.
 
 This project solves the problem using a **supervised classification approach**.
 
 ---
 
-## 📂 Dataset
+##  Dataset
 - **Source:** UCI Machine Learning Repository – Car Evaluation Dataset
 - **Records:** 1,728
 - **Features:**
@@ -40,7 +40,7 @@ This project solves the problem using a **supervised classification approach**.
 
 ---
 
-## 🧠 Machine Learning Methodology
+##  Machine Learning Methodology
 - Categorical feature encoding using **One-Hot Encoding**
 - Stratified train-test split
 - **Random Forest Classifier** for non-linear feature interactions
@@ -54,7 +54,7 @@ This project solves the problem using a **supervised classification approach**.
 
 ---
 
-## 📊 Key Insights
+## Key Insights
 - Safety is the strongest driver of vehicle acceptability
 - High safety can offset higher buying price
 - Minority classes (`good`, `vgood`) show lower recall due to class imbalance
@@ -62,7 +62,7 @@ This project solves the problem using a **supervised classification approach**.
 
 ---
 
-## 🖥️ Application Features
+## Application Features
 - Interactive feature selection UI
 - Real-time predictions
 - Class probability bar chart
@@ -72,7 +72,7 @@ This project solves the problem using a **supervised classification approach**.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Programming:** Python
 - **Data Analysis:** Pandas, NumPy
 - **Machine Learning:** Scikit-learn
@@ -83,7 +83,7 @@ This project solves the problem using a **supervised classification approach**.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 ```text
 vehicle-acceptability-prediction/
 ├── app/
@@ -103,7 +103,7 @@ vehicle-acceptability-prediction/
 ├── .gitignore
 └── README.md
 ```
-## 🚀 Run Locally
+##  Run Locally
 
 Follow the steps below to run the application on your local machine:
 
