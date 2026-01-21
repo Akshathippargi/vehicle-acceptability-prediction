@@ -118,49 +118,53 @@ input_encoded = input_encoded.reindex(
 # -------------------- PREDICTION --------------------
 st.divider()
 
-if st.button(" Predict Acceptability", use_container_width=True):
+if st.button("Predict Acceptability", use_container_width=True):
 
+    # -------------------- MODEL PREDICTION --------------------
     prediction = model.predict(input_encoded)[0]
     probabilities = model.predict_proba(input_encoded)[0]
     classes = model.classes_
-st.divider()
-st.subheader("Pricing Insight")
 
-if buying_price_inr < 400000:
-    st.write(
-        "This vehicle is positioned in the **budget segment**, making it attractive for cost-sensitive buyers. "
-        "Competitive pricing can significantly improve acceptability, even with basic features."
-    )
+    # -------------------- PRICING INSIGHT --------------------
+    st.divider()
+    st.subheader("Pricing Insight")
 
-elif buying_price_inr < 800000:
-    st.write(
-        "This vehicle falls in the **mid-range segment**. Buyers typically expect a balance between price, safety, "
-        "and comfort features. Strong safety ratings can positively influence acceptance."
-    )
+    if buying_price_inr < 400000:
+        st.info(
+            "This vehicle is positioned in the **budget segment**, making it attractive for cost-sensitive buyers. "
+            "Competitive pricing can significantly improve acceptability even with basic features."
+        )
 
-elif buying_price_inr < 1500000:
-    st.write(
-        "This vehicle is priced in the **upper mid-range segment**. Customers in this segment are more selective and "
-        "expect higher safety standards and better overall utility."
-    )
+    elif buying_price_inr < 800000:
+        st.info(
+            "This vehicle falls in the **mid-range segment**. Buyers expect a balance between price, safety, "
+            "and comfort. Strong safety ratings improve acceptance."
+        )
 
-else:
-    st.write(
-        "This vehicle is positioned in the **premium segment**. High pricing may limit mass-market adoption unless "
-        "supported by excellent safety ratings, premium features, and strong brand value."
-    )
+    elif buying_price_inr < 1500000:
+        st.warning(
+            "This vehicle is priced in the **upper mid-range segment**. Customers expect higher safety standards "
+            "and better overall utility."
+        )
+
+    else:
+        st.warning(
+            "This vehicle is positioned in the **premium segment**. Acceptance depends heavily on excellent safety, "
+            "premium features, and strong brand perception."
+        )
 
     # -------------------- MAIN RESULT --------------------
-    st.subheader(" Prediction Result")
+    st.divider()
+    st.subheader("Prediction Result")
 
     if prediction == "unacc":
-        st.error(" **Unacceptable Vehicle**")
+        st.error("Unacceptable Vehicle")
     elif prediction == "acc":
-        st.warning(" **Acceptable Vehicle**")
+        st.warning("Acceptable Vehicle")
     elif prediction == "good":
-        st.success(" **Good Vehicle**")
+        st.success("Good Vehicle")
     else:
-        st.success(" **Very Good Vehicle**")
+        st.success("Very Good Vehicle")
 
     # -------------------- PROBABILITY TABLE --------------------
     prob_df = pd.DataFrame({
